@@ -3,7 +3,7 @@ openapi: 3.0.1
 info:
   title: Summarize Text with Torchserve
   description: |
-      Summarize text with finetuned BART models.
+      Summarize text with finetuned models.
   version: "0.1"
 servers:
   - url: https://main-summarize-torchserve-gkswjdzz.endpoint.ainize.ai
@@ -11,7 +11,7 @@ paths:
   /predictions/bart-base-cnn:
     post:
       tags:
-      - Torch Serve
+      - Small
       requestBody:
         required: true
         content:
@@ -37,7 +37,7 @@ paths:
   /predictions/bart-base-xsum:
     post:
       tags:
-      - Torch Serve
+      - Small
       requestBody:
         required: true
         content:
@@ -63,7 +63,7 @@ paths:
   /predictions/bart-large-base-cnn:
     post:
       tags:
-      - Torch Serve
+      - Large
       requestBody:
         required: true
         content:
@@ -89,6 +89,32 @@ paths:
           description: Bad Request
         '500':
           description: Server side error
+  /predictions/bart-large-base-xsum:
+    post:
+      tags:
+      - Large
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/Input'
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+              example:
+                - |-
+                  A painting that has been hidden away in a Pennsylvania school for the deaf for more than 40 years is set to be auctioned in 2020.
+        '400':
+          description: Bad Request
+        '500':
+          description: Server side error
 Input:
   type: object
   properties:
@@ -104,4 +130,5 @@ Input:
       type: integer
       example: 100
 tags:
-- name: Torch Serve
+- name: Small
+- name: Large
