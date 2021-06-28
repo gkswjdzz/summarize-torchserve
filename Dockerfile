@@ -1,13 +1,24 @@
 FROM pytorch/torchserve:0.4.0-gpu
 
 USER root
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
-RUN pip install transformers
+
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
+
+RUN apt update \
+  && apt install -y nginx \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN echo default_workers_per_model=1 >> config.properties
 
-USER model-server
-WORKDIR /home/model-server
+WORKDIR /app
+COPY requirements.txt .
+
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+COPY nginx.conf .
+COPY ./src /examples
 
 ARG BART_BASE_CNN_LINK
 ENV BART_BASE_CNN_LINK $BART_BASE_CNN_LINK
@@ -22,6 +33,6 @@ ARG BART_LARGE_BASE_XSUM_LINK
 ENV BART_LARGE_BASE_XSUM_LINK $BART_LARGE_BASE_XSUM_LINK
 
 COPY entrypoint.sh .
-EXPOSE 8000
+EXPOSE 80
 
-CMD ["bash", "./entrypoint.sh"]
+ENTRYPOINT [ "bash", "entrypoint.sh" ]

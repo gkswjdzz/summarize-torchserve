@@ -8,7 +8,7 @@ info:
 servers:
   - url: https://main-summarize-torchserve-gkswjdzz.endpoint.ainize.ai
 paths:
-  /predictions/bart-base-cnn:
+  /api/bart-base-cnn:
     post:
       tags:
       - Small
@@ -34,7 +34,7 @@ paths:
           description: Bad Request
         '500':
           description: Server side error
-  /predictions/bart-base-xsum:
+  /api/bart-base-xsum:
     post:
       tags:
       - Small
@@ -60,7 +60,7 @@ paths:
           description: Bad Request
         '500':
           description: Server side error
-  /predictions/bart-large-base-cnn:
+  /api/bart-large-base-cnn:
     post:
       tags:
       - Large
@@ -89,7 +89,7 @@ paths:
           description: Bad Request
         '500':
           description: Server side error
-  /predictions/bart-large-base-xsum:
+  /api/bart-large-base-xsum:
     post:
       tags:
       - Large
