@@ -5,5 +5,5 @@ curl -X GET $BART_LARGE_BASE_XSUM_LINK -o /home/model-server/model-store/bart-la
 
 nginx -c /app/nginx.conf
 nginx -s reload
-torchserve --start --ncs --model-store=/home/model-server/model-store --models=all
-streamlit run /examples/intro.py --server.enableXsrfProtection=false --server.enableCORS=true
+torchserve --start --ncs --model-store=/home/model-server/model-store --models=all --ts-config /home/model-server/config.properties
+streamlit run /streamlit/summarize.py --server.enableXsrfProtection=false --server.enableCORS=true
