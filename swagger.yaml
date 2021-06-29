@@ -29,7 +29,7 @@ paths:
                   type: string
               example:
               - |
-              The Thankful Poor is an 1894 painting by African-American painter Henry Ossawa Tanner.\nIt shares common themes with Tanner's other paintings from the 1890s including The Banjo Lesson (1893) and The Young Sabot Maker (1895)\nThe work is based on photographs Tanner had taken, and is influenced by his views on education and race, which were in turn derived from those of his father and the African Methodist Episcopal Church.
+                The Thankful Poor is an 1894 painting by African-American painter Henry Ossawa Tanner.\nIt shares common themes with Tanner's other paintings from the 1890s including The Banjo Lesson (1893) and The Young Sabot Maker (1895)\nThe work is based on photographs Tanner had taken, and is influenced by his views on education and race, which were in turn derived from those of his father and the African Methodist Episcopal Church.
         '400':
           description: Bad Request
         '500':
@@ -81,10 +81,10 @@ paths:
                   type: string
               example:
               - |
-              NEW: U.S. State Department says it is "deeply concerned" about the situation.
-              NEW: The U.N. Security Council condemns the attack, urges restraint.
-              The attack is the latest in a string of recent attacks on Shiite mosques in Iraq.
-              Iraqi security forces have been battling Sunni militants for control of Tikrit.
+                NEW: U.S. State Department says it is "deeply concerned" about the situation.
+                NEW: The U.N. Security Council condemns the attack, urges restraint.
+                The attack is the latest in a string of recent attacks on Shiite mosques in Iraq.
+                Iraqi security forces have been battling Sunni militants for control of Tikrit.
         '400':
           description: Bad Request
         '500':
@@ -136,7 +136,7 @@ paths:
                   type: string
               example:
               - |
-              인 편향(認知偏向, Cognitive bias)은 경험에 의한 비논리적 추론으로 잘못된 판단을 하는 것을 말하는데, 대니얼 카너먼과 트버스키는 인지 편향이 인간이 내리는 주요한 판단 영역에 실제적으로 영향을 미친다고 주장하였다.
+                인 편향(認知偏向, Cognitive bias)은 경험에 의한 비논리적 추론으로 잘못된 판단을 하는 것을 말하는데, 대니얼 카너먼과 트버스키는 인지 편향이 인간이 내리는 주요한 판단 영역에 실제적으로 영향을 미친다고 주장하였다.
                     하였다.
                     하였다.
                     하였다.
