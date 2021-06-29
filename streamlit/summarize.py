@@ -7,7 +7,7 @@ models = {
     'bart model with xsum dataset': 'bart-base-xsum',
     'bart large model with cnn dataset': 'bart-large-base-cnn',
     'bart large with xsum dataset': 'bart-large-base-xsum',
-    'kobart with korean news dataset': 'kobart',
+    'kobart with korean news dataset (Korean)': 'kobart',
 }
 
 
