@@ -11,7 +11,7 @@ paths:
   /api/bart-base-cnn:
     post:
       tags:
-      - Small
+      - English
       requestBody:
         required: true
         content:
@@ -28,8 +28,8 @@ paths:
                 items:
                   type: string
               example:
-              - |-
-                The Thankful Poor is an 1894 painting by African-American painter Henry Ossawa Tanner.\nIt shares common themes with Tanner's other paintings from the 1890s including The Banjo Lesson (1893) and The Young Sabot Maker (1895)\nThe work is based on photographs Tanner had taken, and is influenced by his views on education and race, which were in turn derived from those of his father and the African Methodist Episcopal Church.
+              - |
+              The Thankful Poor is an 1894 painting by African-American painter Henry Ossawa Tanner.\nIt shares common themes with Tanner's other paintings from the 1890s including The Banjo Lesson (1893) and The Young Sabot Maker (1895)\nThe work is based on photographs Tanner had taken, and is influenced by his views on education and race, which were in turn derived from those of his father and the African Methodist Episcopal Church.
         '400':
           description: Bad Request
         '500':
@@ -37,7 +37,7 @@ paths:
   /api/bart-base-xsum:
     post:
       tags:
-      - Small
+      - English
       requestBody:
         required: true
         content:
@@ -54,7 +54,7 @@ paths:
                 items:
                   type: string
               example:
-              - |-
+              - |
                 A painting believed to be the first of its kind in the US has been discovered in a Pennsylvania school closet for more than 40 years.
         '400':
           description: Bad Request
@@ -63,7 +63,7 @@ paths:
   /api/bart-large-base-cnn:
     post:
       tags:
-      - Large
+      - English
       requestBody:
         required: true
         content:
@@ -80,11 +80,11 @@ paths:
                 items:
                   type: string
               example:
-                - |-
-                  NEW: U.S. State Department says it is "deeply concerned" about the situation.
-                  NEW: The U.N. Security Council condemns the attack, urges restraint.
-                  The attack is the latest in a string of recent attacks on Shiite mosques in Iraq.
-                  Iraqi security forces have been battling Sunni militants for control of Tikrit.
+              - |
+              NEW: U.S. State Department says it is "deeply concerned" about the situation.
+              NEW: The U.N. Security Council condemns the attack, urges restraint.
+              The attack is the latest in a string of recent attacks on Shiite mosques in Iraq.
+              Iraqi security forces have been battling Sunni militants for control of Tikrit.
         '400':
           description: Bad Request
         '500':
@@ -92,7 +92,7 @@ paths:
   /api/bart-large-base-xsum:
     post:
       tags:
-      - Large
+      - English
       requestBody:
         required: true
         content:
@@ -109,8 +109,42 @@ paths:
                 items:
                   type: string
               example:
-                - |-
-                  A painting that has been hidden away in a Pennsylvania school for the deaf for more than 40 years is set to be auctioned in 2020.
+              - |
+                A painting that has been hidden away in a Pennsylvania school for the deaf for more than 40 years is set to be auctioned in 2020.
+        '400':
+          description: Bad Request
+        '500':
+          description: Server side error
+  /api/kobart:
+    post:
+      tags:
+      - Korean
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/KoreanInput'
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+              example:
+              - |
+              인 편향(認知偏向, Cognitive bias)은 경험에 의한 비논리적 추론으로 잘못된 판단을 하는 것을 말하는데, 대니얼 카너먼과 트버스키는 인지 편향이 인간이 내리는 주요한 판단 영역에 실제적으로 영향을 미친다고 주장하였다.
+                    하였다.
+                    하였다.
+                    하였다.
+                    하였다.
+                     반대하는 대니얼 카너먼과 트버스키는 인지 편향이 인간이 내리는 주요한 판단 영역에 실제적으로 영향을 미친다고 주장하였다.
+                    하였다.
+                    하였다.
+
         '400':
           description: Bad Request
         '500':
@@ -129,6 +163,20 @@ Input:
     max_length:
       type: integer
       example: 100
+KoreanInput:
+  type: object
+  properties:
+    text:
+      type: string
+      example: |
+        인지 편향(認知偏向, Cognitive bias)은 경험에 의한 비논리적 추론으로 잘못된 판단을 하는 것을 말한다. 인지심리학에서 확증 편향은 정보의 처리 과정에서 일어나는 인지 편향 가운데 하나이다. 사람들은 자신이 원하는 결과를 바라거나 어떤 사건을 접하고 감정이 앞설 때, 그리고 저마다의 신념을 지키고자 할 때 확증 편향을 보인다. 확증 편향은 원하는 정보만 선택적으로 모으거나, 어떤 것을 설명하거나 주장할 때 편향된 방법을 동원한다.
+
+        개인들은 입력된 인식으로부터 자신만의 "주체적인 현실"을 창조한다. 객관적인 인식이 아닌 개인이 구성하는 현실은 세상을 바라보는 개인의 행동을 결정지을 수 있다. 때때로 인지편향은 개인의 합리성을 결여시키고, 개인의 지각을 왜곡시킬 수 있으며, 개인이 부정확한 판단을 내리거나, 비논리적인 해석을 겪게 만들 수 있다.
+
+        인지 과학, 사회 심리학, 행동 경제학의 분야에서 이뤄진 지난 60년 간의 연구에 따르면, 인간의 판단과 의사결정에 대하여 지속적으로 진화하는 인지편향 목록이 확인되었다. 즉, 인간의 판단과 의사결정 과정에서 어떤 것을 설명하거나 주장할 때, 인지 편향과 같은 편향된 방법을 동원한다는 것이다. 대니얼 카너먼과 트버스키는 인지 편향이 인간이 내리는 주요한 판단 영역에 실제적으로 영향을 미친다고 주장하였다.
+    max_length:
+      type: integer
+      example: 100
 tags:
-- name: Small
-- name: Large
+- name: English
+- name: Korean
