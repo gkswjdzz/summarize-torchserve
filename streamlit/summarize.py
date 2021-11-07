@@ -6,7 +6,7 @@ models = {
     'cnn 데이터셋으로 학습한 bart model': 'bart-base-cnn',
     'xsum 데이터셋으로 학습한 bart model': 'bart-base-xsum',
     'cnn 데이터셋으로 학습한 bart large model': 'bart-large-base-cnn',
-    'xsum 데이터셋으로 학습한 bart large': 'bart-large-base-xsum',
+    # 'xsum 데이터셋으로 학습한 bart large': 'bart-large-base-xsum',
     '한국어 뉴스 데이터셋으로 학습한 kobart': 'kobart',
 }
 
